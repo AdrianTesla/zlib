@@ -5,6 +5,8 @@ project "zlib"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    disablewarnings ("4996")
+
     files
     {
         "adler32.c",
@@ -35,3 +37,11 @@ project "zlib"
         "zutil.h",
         "zutil.h"
     }
+
+    filter "configurations:Debug"
+	    runtime "Debug"
+	    symbols "on"
+
+    filter "configurations:Release"
+	    runtime "Release"
+	    optimize "on"
