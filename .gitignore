@@ -24,3 +24,10 @@
 /configure.log
 
 .DS_Store
+
+bin
+bin-int
+*.vcxproj
+*.filters
+*.user
+*.sln
